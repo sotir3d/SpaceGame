@@ -12,7 +12,7 @@ public class VoidInstantiation : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
+            Destroy(other.transform.parent.gameObject);
             Instantiate(player, spawnPoints[Random.Range(0, 3)].transform.position, q);
             StartCoroutine(PlayerMovement.DeathFeedback());
         }
@@ -20,6 +20,7 @@ public class VoidInstantiation : MonoBehaviour
         if(other.CompareTag("Block"))
         {
             Destroy(other.gameObject);   
+            
         }
     }
 }

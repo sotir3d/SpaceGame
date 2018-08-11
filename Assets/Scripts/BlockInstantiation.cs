@@ -6,6 +6,8 @@ public class BlockInstantiation : MonoBehaviour
 {
     public GameObject blockSpawner;
 
+    public Sprite[] sprites;
+
     SpriteRenderer spriteRenderer;
     Vector2 newScale;
     Vector2 newPosition;
@@ -20,6 +22,8 @@ public class BlockInstantiation : MonoBehaviour
         spawnTime = Time.time;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
+
+        spriteRenderer.sprite = sprites[Random.Range(0, 11)];
         Invoke("EnableSpriteRenderer", 0.1f);
     }
 
