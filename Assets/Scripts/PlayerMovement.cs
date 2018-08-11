@@ -21,9 +21,6 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput;
     float verticalInput;
 
-    float lastFootstepSound;
-    float footstepSoundSpeed = 0.6f;
-
     // Use this for initialization
     void Start()
     {
