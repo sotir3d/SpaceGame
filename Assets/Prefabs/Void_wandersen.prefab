@@ -83,7 +83,7 @@ MonoBehaviour:
   - {fileID: 1836701228408630, guid: 80391fd90596578479a6e0dcbb8903f1, type: 2}
   - {fileID: 1538965088982306, guid: 87803df5a0ff3fd4bb7118940b4b936a, type: 2}
   - {fileID: 1370726670804950, guid: 0f1ad34817dd0fd4ca19fb550b603a83, type: 2}
-  player: {fileID: 1347075562468052, guid: a99a068e0869fe34092500d19d14afca, type: 2}
+  player: {fileID: 1347075562468052, guid: c3e1293f1f29581418ed4fbe4f2d1b87, type: 2}
 --- !u!212 &212244022398551946
 SpriteRenderer:
   m_ObjectHideFlags: 1
