@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 10f;
     static SpriteRenderer sprtRend;
-    static WaitForSeconds waitForSeconds = new WaitForSeconds(0.1f);
+    static WaitForSeconds waitForSeconds = new WaitForSeconds(0.05f);
 
     Rigidbody2D playerRigidbody;
     Vector2 direction;
@@ -45,6 +45,14 @@ public class PlayerMovement : MonoBehaviour
         yield return waitForSeconds;
         sprtRend.enabled = true;
         yield return waitForSeconds;
+        sprtRend.enabled = false;
+        yield return waitForSeconds;
+        sprtRend.enabled = true;
+        yield return waitForSeconds;
+        sprtRend.enabled = false;
+        yield return waitForSeconds;
+        sprtRend.enabled = true;
+         yield return waitForSeconds;
         sprtRend.enabled = false;
         yield return waitForSeconds;
         sprtRend.enabled = true;
