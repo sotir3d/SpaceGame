@@ -8,29 +8,19 @@ public class BlockSpawner : MonoBehaviour
     public GameObject player;
 
     GameObject newBlock;
+    Vector2 newPosition;
 
-    float spawnTime = 2f;
-    float lastSpawned = 0;
     Quaternion q;
 
     // Use this for initialization
     void Start()
     {
-
+        InvokeRepeating("SpawnBlock", 1f, 1f);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnBlock()
     {
-        if ((Time.time - lastSpawned) > spawnTime)
-        {
-            newBlock = Instantiate(block, new Vector2(Random.Range(-9f, 9f), Random.Range(-5f, 5f)), q);
-
-            //if ((newBlock.transform.position.x - player.transform.position.x) < 1)
-            //{
-            //    newBlock.transform.position.x += 1;
-            //}
-            lastSpawned = Time.time;
-        }
+        newBlock = Instantiate(block, new Vector2(Random.Range(-9f, 9f), Random.Range(-5f, 5f)), q);
+        newBlock.GetComponent<BlockInstantiation>().blockSpawner = gameObject;
     }
 }

@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class BlockInstantiation : MonoBehaviour
 {
+    public GameObject blockSpawner;
+
     Vector2 newScale;
 
     Vector2 newPosition;
+
+    SpriteRenderer spriteRenderer;
+
+    bool isDestroyed = false;
+
+    float spawnTime;
     // Use this for initialization
     void Start()
     {
         newScale.x = 0;
         newScale.y = 0;
+        transform.localScale = newScale;
+        spawnTime = Time.time;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = false;
+        Invoke("EnableSpriteRenderer", 0.1f);
     }
 
     // Update is called once per frame
@@ -22,17 +35,20 @@ public class BlockInstantiation : MonoBehaviour
         
         transform.localScale = newScale;
     }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayerCircle") && (Time.time - spawnTime) < 0.02f && !isDestroyed)
+        {
+            Debug.Log("destroyed");
+            isDestroyed = true;
+            blockSpawner.GetComponent<BlockSpawner>().SpawnBlock();
+            Destroy(gameObject);
+        }
+    }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    Debug.Log("asf");
-    //    if (collision.gameObject.CompareTag("PlayerCircle"))
-    //    {
-    //        Debug.Log("hier");
-    //        newPosition = transform.position;
-    //        newPosition.x += 4.5f;
-    //        newPosition.y += 4.5f;
-    //        transform.position = newPosition;
-    //    }
-    //}
+    void EnableSpriteRenderer()
+    {
+        spriteRenderer.enabled = true;
+    }
 }
