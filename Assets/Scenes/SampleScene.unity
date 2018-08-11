@@ -229,21 +229,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 58367081191521302, guid: a99a068e0869fe34092500d19d14afca,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 58367081191521302, guid: a99a068e0869fe34092500d19d14afca,
-        type: 2}
-      propertyPath: m_Radius
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 58367081191521302, guid: a99a068e0869fe34092500d19d14afca,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a99a068e0869fe34092500d19d14afca, type: 2}
   m_IsPrefabAsset: 0
