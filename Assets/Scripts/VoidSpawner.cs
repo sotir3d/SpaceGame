@@ -24,5 +24,6 @@ public class VoidSpawner : MonoBehaviour
         numberOfVoid = FindObjectsOfType<VoidInstantiation>().Length;
         if (numberOfVoid <= 9)
             Instantiate(voidFloor, voidPos, q);
+
     }
 }
