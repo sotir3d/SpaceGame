@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerCircle
+  - SpawnPoint
+  - Block
+  - Void
   layers:
   - Default
   - TransparentFX

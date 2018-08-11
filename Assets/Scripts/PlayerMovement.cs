@@ -5,30 +5,21 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 10f;
-    //public GameObject feet;
-    //public AudioClip footstepSound;
-
+    static SpriteRenderer sprtRend;
     Vector2 direction;
     Quaternion playerRotation;
     Rigidbody2D playerRigidbody;
-
-    //Animator anim;
-    //Animator feetAnim;
-
-    //AudioSource playerAudioSource;
-
     float angle;
     float horizontalInput;
     float verticalInput;
 
-    // Use this for initialization
     void Start()
     {
         playerRotation = transform.rotation;
         playerRigidbody = GetComponent<Rigidbody2D>();
+        sprtRend = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         //ignores input when game is paused
@@ -43,5 +34,12 @@ public class PlayerMovement : MonoBehaviour
 
         playerRotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = playerRotation;
+    }
+
+    public static IEnumerator DeathFeedback()
+    {
+        sprtRend.enabled = false;
+        yield return new WaitForSeconds(0.05f);
+        sprtRend.enabled = true;
     }
 }

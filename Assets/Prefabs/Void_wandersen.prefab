@@ -20,11 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4937053836452210}
   - component: {fileID: 212244022398551946}
-  - component: {fileID: 114766759811617906}
-  - component: {fileID: 61554049959969644}
-  - component: {fileID: 50167449954407480}
+  - component: {fileID: 61068581025808734}
+  - component: {fileID: 114090971959637094}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Void_wandersen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,33 +36,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347075562468052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.6530316, y: -0.13947478, z: 0}
+  m_LocalPosition: {x: 1.0356694, y: -1.0017807, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50167449954407480
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1347075562468052}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &61554049959969644
+--- !u!61 &61068581025808734
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,8 +50,8 @@ BoxCollider2D:
   m_GameObject: {fileID: 1347075562468052}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_Material: {fileID: 6200000, guid: 8306148aa73aabd4394588331aa88355, type: 2}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -88,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114766759811617906
+--- !u!114 &114090971959637094
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,10 +75,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1347075562468052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2407b4c4186a4d04c94bfa833b55f402, type: 3}
+  m_Script: {fileID: 11500000, guid: abf9b2ef10f05f94da24fe6f41250a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  voidFloor: {fileID: 0}
+  spawnPoints:
+  - {fileID: 1910132590827250, guid: 30154a7cb288d894cbbfe8a8ffe5d33f, type: 2}
+  - {fileID: 1836701228408630, guid: 80391fd90596578479a6e0dcbb8903f1, type: 2}
+  - {fileID: 1538965088982306, guid: 87803df5a0ff3fd4bb7118940b4b936a, type: 2}
+  - {fileID: 1370726670804950, guid: 0f1ad34817dd0fd4ca19fb550b603a83, type: 2}
 --- !u!212 &212244022398551946
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -136,7 +120,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fcdb02c5cdac37847a7be8f96cb10a39, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
