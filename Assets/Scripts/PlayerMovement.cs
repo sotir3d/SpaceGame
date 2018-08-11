@@ -6,9 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 10f;
     static SpriteRenderer sprtRend;
+
+    Rigidbody2D playerRigidbody;
     Vector2 direction;
     Quaternion playerRotation;
-    Rigidbody2D playerRigidbody;
     float angle;
     float horizontalInput;
     float verticalInput;
@@ -38,6 +39,10 @@ public class PlayerMovement : MonoBehaviour
 
     public static IEnumerator DeathFeedback()
     {
+        sprtRend.enabled = false;
+        yield return new WaitForSeconds(0.05f);
+        sprtRend.enabled = true;
+        yield return new WaitForSeconds(0.05f);
         sprtRend.enabled = false;
         yield return new WaitForSeconds(0.05f);
         sprtRend.enabled = true;

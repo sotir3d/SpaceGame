@@ -6,16 +6,12 @@ public class BlockInstantiation : MonoBehaviour
 {
     public GameObject blockSpawner;
 
-    Vector2 newScale;
-
-    Vector2 newPosition;
-
     SpriteRenderer spriteRenderer;
-
+    Vector2 newScale;
+    Vector2 newPosition;
     bool isDestroyed = false;
-
     float spawnTime;
-    // Use this for initialization
+
     void Start()
     {
         newScale.x = 0;
@@ -27,7 +23,6 @@ public class BlockInstantiation : MonoBehaviour
         Invoke("EnableSpriteRenderer", 0.1f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         newScale.x = Mathf.Lerp(newScale.x, 1, 0.1f);

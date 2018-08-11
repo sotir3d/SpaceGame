@@ -26,7 +26,6 @@ public class VoidAppear : MonoBehaviour
             other.gameObject.SetActive(false);
             spawnPoints[Random.Range(0, 4)].transform.position = other.transform.position;
             StartCoroutine(PlayerMovement.DeathFeedback());
-            StartCoroutine(PlayerMovement.DeathFeedback());
         }
 
         if(other.CompareTag("Block"))

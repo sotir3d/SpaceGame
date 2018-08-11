@@ -9,10 +9,8 @@ public class BlockSpawner : MonoBehaviour
 
     GameObject newBlock;
     Vector2 newPosition;
+    Quaternion q = Quaternion.identity;
 
-    Quaternion q;
-
-    // Use this for initialization
     void Start()
     {
         InvokeRepeating("SpawnBlock", 1f, 1f);
