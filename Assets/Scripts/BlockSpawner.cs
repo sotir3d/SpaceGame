@@ -5,11 +5,9 @@ using UnityEngine;
 public class BlockSpawner : MonoBehaviour
 {
     public GameObject block;
-    public GameObject player;
 
     GameObject newBlock;
     Vector2 newPosition;
-    Quaternion q = Quaternion.identity;
 
     void Start()
     {
@@ -18,7 +16,8 @@ public class BlockSpawner : MonoBehaviour
 
     public void SpawnBlock()
     {
-        newBlock = Instantiate(block, new Vector2(Random.Range(-8.5f, 8.5f), Random.Range(-5f, 5f)), q);
+        newBlock = Instantiate(block, new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-6f, 6f)), Quaternion.identity);
         newBlock.GetComponent<BlockInstantiation>().blockSpawner = gameObject;
     }
+
 }

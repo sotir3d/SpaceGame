@@ -5,24 +5,25 @@ using UnityEngine;
 public class VoidSpawner : MonoBehaviour
 {
     public GameObject voidFloor;
+    public int voidAmount = 15;
+
     Vector2 voidPos;
-    Quaternion q = Quaternion.identity;
     int numberOfVoid;
 
     void Start()
     {
-        InvokeRepeating("Spawn", 5, 10);
+        InvokeRepeating("Spawn", 3, 5);
     }
 
     void Update()
     {
-        voidPos = new Vector2(Random.Range(-9, 9), Random.Range(-5, 5));
+        voidPos = new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-6f, 6f));
     }
 
     void Spawn()
     {
         numberOfVoid = FindObjectsOfType<VoidInstantiation>().Length;
-        if (numberOfVoid <= 9)
-            Instantiate(voidFloor, voidPos, q);
+        if (numberOfVoid <= voidAmount)
+            Instantiate(voidFloor, voidPos, Quaternion.identity);
     }
 }

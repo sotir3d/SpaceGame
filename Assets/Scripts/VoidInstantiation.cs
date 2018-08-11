@@ -4,22 +4,35 @@ using UnityEngine;
 
 public class VoidInstantiation : MonoBehaviour
 {
-    public GameObject[] spawnPoints;
-    Quaternion q = Quaternion.identity;
-    
-    private void OnTriggerEnter2D(Collider2D other)
+    PlayerManager playerManager;
+    Vector2 newScale;
+    Vector2 newPosition;
+
+    void Start()
     {
-        if(other.CompareTag("Player"))
+        newScale.x = 0;
+        newScale.y = 0;
+        transform.localScale = newScale;
+        playerManager = FindObjectOfType<PlayerManager>();
+    }
+
+    void Update()
+    {
+        newScale.x = Mathf.Lerp(newScale.x, 1, 2f * Time.deltaTime);
+        newScale.y = Mathf.Lerp(newScale.y, 1, 2f * Time.deltaTime);
+        transform.localScale = newScale;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
         {
-            other.gameObject.SetActive(false);
-            other.transform.parent.position = spawnPoints[Random.Range(0, 3)].transform.position;
-            other.gameObject.SetActive(true);
-            StartCoroutine(PlayerMovement.DeathFeedback());
+            StartCoroutine(playerManager.DeathFeedback());
         }
 
-        if(other.CompareTag("Block"))
+        if (other.CompareTag("Block"))
         {
-            Destroy(other.gameObject);     
+            Destroy(other.gameObject);
         }
     }
 }

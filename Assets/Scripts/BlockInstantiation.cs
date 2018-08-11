@@ -5,7 +5,6 @@ using UnityEngine;
 public class BlockInstantiation : MonoBehaviour
 {
     public GameObject blockSpawner;
-
     public Sprite[] sprites;
 
     SpriteRenderer spriteRenderer;
@@ -22,16 +21,14 @@ public class BlockInstantiation : MonoBehaviour
         spawnTime = Time.time;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
-
         spriteRenderer.sprite = sprites[Random.Range(0, 10)];
         Invoke("EnableSpriteRenderer", 0.1f);
     }
 
     void Update()
     {
-        newScale.x = Mathf.Lerp(newScale.x, 1, 0.1f);
-        newScale.y = Mathf.Lerp(newScale.y, 1, 0.1f);
-        
+        newScale.x = Mathf.Lerp(newScale.x, 1, 5f * Time.deltaTime);
+        newScale.y = Mathf.Lerp(newScale.y, 1, 5f * Time.deltaTime);
         transform.localScale = newScale;
     }
     
@@ -39,7 +36,7 @@ public class BlockInstantiation : MonoBehaviour
     {
         if (collision.CompareTag("PlayerCircle") && (Time.time - spawnTime) < 0.02f && !isDestroyed)
         {
-            Debug.Log("destroyed");
+            //Debug.Log("destroyed");
             isDestroyed = true;
             blockSpawner.GetComponent<BlockSpawner>().SpawnBlock();
             Destroy(gameObject);

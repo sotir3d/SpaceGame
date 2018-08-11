@@ -8,6 +8,7 @@ TagManager:
   - SpawnPoint
   - Block
   - Void
+  - Border
   layers:
   - Default
   - TransparentFX
