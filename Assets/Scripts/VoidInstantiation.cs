@@ -19,8 +19,7 @@ public class VoidInstantiation : MonoBehaviour
 
         if(other.CompareTag("Block"))
         {
-            Destroy(other.gameObject);   
-            
+            Destroy(other.gameObject);     
         }
     }
 }

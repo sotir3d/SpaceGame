@@ -7,6 +7,7 @@ public class VoidSpawner : MonoBehaviour
     public GameObject voidFloor;
     Vector2 voidPos;
     Quaternion q = Quaternion.identity;
+    int numberOfVoid;
 
     void Start()
     {
@@ -20,6 +21,8 @@ public class VoidSpawner : MonoBehaviour
 
     void Spawn()
     {
-        Instantiate(voidFloor, voidPos, q);
+        numberOfVoid = FindObjectsOfType<VoidInstantiation>().Length;
+        if (numberOfVoid <= 9)
+            Instantiate(voidFloor, voidPos, q);
     }
 }
