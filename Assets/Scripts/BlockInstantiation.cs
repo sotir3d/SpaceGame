@@ -23,7 +23,7 @@ public class BlockInstantiation : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
 
-        spriteRenderer.sprite = sprites[Random.Range(0, 11)];
+        spriteRenderer.sprite = sprites[Random.Range(0, 10)];
         Invoke("EnableSpriteRenderer", 0.1f);
     }
 
