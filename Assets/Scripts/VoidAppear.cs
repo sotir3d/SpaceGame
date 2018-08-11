@@ -11,11 +11,15 @@ public class VoidAppear : MonoBehaviour
 
     void Start()
     {
-        voidPos = new Vector2(Random.Range(-9, 9), Random.Range(-5, 5));
         InvokeRepeating("Spawn", 5, 10);
     }
 
-    private void OnTriggerEnter(Collider other)
+    void Update()
+    {
+        voidPos = new Vector2(Random.Range(-9, 9), Random.Range(-5, 5));
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
