@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4937053836452210}
   - component: {fileID: 212244022398551946}
   - component: {fileID: 61068581025808734}
+  - component: {fileID: 114663874992046548}
   m_Layer: 0
   m_Name: Void_wandersen
   m_TagString: Void
@@ -66,6 +67,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114663874992046548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1347075562468052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf9b2ef10f05f94da24fe6f41250a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 1910132590827250, guid: 30154a7cb288d894cbbfe8a8ffe5d33f, type: 2}
+  - {fileID: 1836701228408630, guid: 80391fd90596578479a6e0dcbb8903f1, type: 2}
+  - {fileID: 1538965088982306, guid: 87803df5a0ff3fd4bb7118940b4b936a, type: 2}
+  - {fileID: 1370726670804950, guid: 0f1ad34817dd0fd4ca19fb550b603a83, type: 2}
+  player: {fileID: 1347075562468052, guid: a99a068e0869fe34092500d19d14afca, type: 2}
 --- !u!212 &212244022398551946
 SpriteRenderer:
   m_ObjectHideFlags: 1
