@@ -51,4 +51,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2bcb536c3907b4083cc15fc7b1f58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voidFloor: {fileID: 1347075562468052, guid: 672b166ecf8525240b64b7c3d8228153, type: 2}
+  voidFloor: {fileID: 1347075562468052, guid: 71dea7bc5bc2d204c9114a11585a719e, type: 2}
+  voidAmount: 15

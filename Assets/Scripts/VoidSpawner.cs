@@ -22,7 +22,7 @@ public class VoidSpawner : MonoBehaviour
 
     void Spawn()
     {
-        numberOfVoid = FindObjectsOfType<VoidInstantiation>().Length;
+        numberOfVoid = FindObjectsOfType<VoidHandler>().Length;
         if (numberOfVoid <= voidAmount)
             Instantiate(voidFloor, voidPos, Quaternion.identity);
     }

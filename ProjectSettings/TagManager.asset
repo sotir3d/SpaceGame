@@ -43,6 +43,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Void
+    uniqueID: 3535753721
+    locked: 0
+  - name: Blocks
+    uniqueID: 4008770615
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

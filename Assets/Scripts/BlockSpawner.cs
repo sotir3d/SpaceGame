@@ -17,7 +17,7 @@ public class BlockSpawner : MonoBehaviour
     public void SpawnBlock()
     {
         newBlock = Instantiate(block, new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-6f, 6f)), Quaternion.identity);
-        newBlock.GetComponent<BlockInstantiation>().blockSpawner = gameObject;
+        newBlock.GetComponent<BlockHandler>().blockSpawner = gameObject;
     }
 
 }
