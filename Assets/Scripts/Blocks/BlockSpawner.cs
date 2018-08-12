@@ -6,7 +6,7 @@ public class BlockSpawner : MonoBehaviour
 {
     public GameObject block;
 
-    public float spawnRate = 0.7f;
+    public float spawnRate = 0.3f;
 
     GameObject newBlock;
     Vector2 newPosition;
