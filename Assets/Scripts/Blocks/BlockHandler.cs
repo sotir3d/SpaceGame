@@ -17,8 +17,15 @@ public class BlockHandler : MonoBehaviour
 
     bool isDying = false;
 
+    GameManager gM;
+
     void Start()
     {
+        gM = FindObjectOfType<GameManager>();
+
+
+        gM.AddBlock();
+
         newScale.x = 0;
         newScale.y = 0;
         transform.localScale = newScale;
@@ -55,11 +62,13 @@ public class BlockHandler : MonoBehaviour
     }
 
     public IEnumerator Death(Vector2 voidPosition)
-    {
+    {        
         //avoids calling Death multiple times because of OnTriggerEnter2D weirdness
         if (!isDying)
         {
             Vector2 newPosition;
+
+            gM.RemoveBlock();
 
             isDying = true;
 
