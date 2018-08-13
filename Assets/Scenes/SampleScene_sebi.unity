@@ -393,6 +393,26 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114931545521101882, guid: 5438fa105f45d9244b478d7ee943faeb,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931545521101882, guid: 5438fa105f45d9244b478d7ee943faeb,
+        type: 2}
+      propertyPath: m_ReferenceResolution.x
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931545521101882, guid: 5438fa105f45d9244b478d7ee943faeb,
+        type: 2}
+      propertyPath: m_ReferenceResolution.y
+      value: 786
+      objectReference: {fileID: 0}
+    - target: {fileID: 114931545521101882, guid: 5438fa105f45d9244b478d7ee943faeb,
+        type: 2}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5438fa105f45d9244b478d7ee943faeb, type: 2}
   m_IsPrefabAsset: 0
@@ -584,16 +604,6 @@ Prefab:
       propertyPath: spawnPoints.Array.data[3]
       value: 
       objectReference: {fileID: 984559562}
-    - target: {fileID: 114812952829318770, guid: c3e1293f1f29581418ed4fbe4f2d1b87,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114812952829318770, guid: c3e1293f1f29581418ed4fbe4f2d1b87,
-        type: 2}
-      propertyPath: turnSpeed
-      value: 500
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3e1293f1f29581418ed4fbe4f2d1b87, type: 2}
   m_IsPrefabAsset: 0
