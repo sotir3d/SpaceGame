@@ -45,4 +45,11 @@ public class VoidSpawner : MonoBehaviour
         numberOfVoid[0].GetComponent<VoidHandler>().StartCoroutine("Disappear");
         numberOfVoid.RemoveAt(0);
     }
+
+    public void DestroyOnWrongLocation(GameObject removedVoid)
+    {
+        numberOfVoid.Remove(removedVoid);
+        Destroy(removedVoid);
+    }
+
 }

@@ -53,3 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: {fileID: 1347075562468052, guid: 8628cb41a62f5e945abc792a1797af53, type: 2}
   spawnRate: 0.4
+  blockSpawnPitchchangeRate: 0
