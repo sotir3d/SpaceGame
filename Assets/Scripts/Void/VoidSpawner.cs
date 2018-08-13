@@ -13,6 +13,8 @@ public class VoidSpawner : MonoBehaviour
     void Start()
     {
         InvokeRepeating("Spawn", 3, 5);
+        if (numberOfVoid == voidAmount)
+            InvokeRepeating("Destroy", 5, 5);
     }
 
     void Update()
@@ -25,5 +27,9 @@ public class VoidSpawner : MonoBehaviour
         numberOfVoid = FindObjectsOfType<VoidHandler>().Length;
         if (numberOfVoid <= voidAmount)
             Instantiate(voidFloor, voidPos, Quaternion.identity);
+    }
+    private void Destroy()
+    {
+        Destroy(gameObject);
     }
 }
