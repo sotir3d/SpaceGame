@@ -116,4 +116,12 @@ MonoBehaviour:
     spatialBlend: 0
     maxDistance: 0
     source: {fileID: 0}
+  - name: VoidDespawn
+    clip: {fileID: 8300000, guid: 8d469163cd44d1c4d86f89610268d9d5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    source: {fileID: 0}
   playOnce: 0

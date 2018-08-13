@@ -10,7 +10,6 @@ public class MainMenuBehaviour : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(1);
-        audioManager.playOnce = false;
     }
 
     public void QuitGame()

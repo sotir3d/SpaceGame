@@ -65,6 +65,17 @@ public class GameManager : MonoBehaviour
         CurrentBlocks--;
     }
 
+    public void RestartScene()
+    {
+        //Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     void GameOver()
     {
         if (!PlayerPrefs.HasKey("HighScore"))
@@ -75,7 +86,6 @@ public class GameManager : MonoBehaviour
 
         if(!playOnce)
         {
-            audioManager.Stop("GameMusic");
             audioManager.Play("GameOver");
             playOnce = true;
         }
@@ -83,17 +93,5 @@ public class GameManager : MonoBehaviour
         if(uiManager != null)
             uiManager.ToggleGameOver();
         Time.timeScale = 0;
-    }
-
-    public void RestartScene()
-    {
-        //Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void ToMainMenu()
-    {
-        SceneManager.LoadScene(0);
-        audioManager.playOnce = false;
     }
 }

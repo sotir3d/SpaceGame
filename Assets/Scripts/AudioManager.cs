@@ -43,62 +43,22 @@ public class AudioManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             Stop("GameMusic");
-            if (!playOnce)
+            if (!IsPlaying("MainMenuMusic"))
             {
-                if (!IsPlaying("MainMenuMusic"))
-                {
-                    Play("MainMenuMusic");
-                    playOnce = true;
-                }
+                Play("MainMenuMusic");
+
             }
         }
 
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             Stop("MainMenuMusic");
-            if (!playOnce)
+            if (!IsPlaying("GameMusic"))
             {
-                if (!IsPlaying("GameMusic"))
-                {
-                    Play("GameMusic");
-                    playOnce = true;
-                }
+                Play("GameMusic");
+
             }
         }
-
-        //if (SceneManager.GetActiveScene().buildIndex == 2)
-        //{
-        //    Stop("Theme1");
-        //    Stop("ThemeGameOverScreen");
-        //    if (!playOnce)
-        //    {
-        //        Play("Theme2");
-        //        playOnce = true;
-        //    }
-        //}
-
-        //if (SceneManager.GetActiveScene().buildIndex == 4)
-        //{
-        //    Stop("Theme1");
-        //    Stop("Theme2");
-        //    if (!playOnce)
-        //    {
-        //        Play("ThemeGameOverScreen");
-        //        playOnce = true;
-        //    }
-        //}
-
-        //if (SceneManager.GetActiveScene().buildIndex == 3)
-        //{
-        //    Stop("Theme1");
-        //    Stop("Theme2");
-        //    Stop("ThemeGameOverScreen");
-        //    if (!playOnce)
-        //    {
-        //        Play("ThemeThankYou");
-        //        playOnce = true;
-        //    }
-        //}
     }
 
     public void Stop(string name)
