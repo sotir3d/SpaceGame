@@ -13,7 +13,7 @@ public class BlockHandler : MonoBehaviour
     bool isDestroyed = false;
     float spawnTime;
 
-    float lerpSpeed = 20;
+    float lerpSpeed = 0.1f;
 
     bool isDying = false;
 
@@ -74,12 +74,12 @@ public class BlockHandler : MonoBehaviour
             {
                 transform.Rotate(Vector3.forward * 30);
 
-                newScale.x = Mathf.Lerp(newScale.x, 0, lerpSpeed * Time.deltaTime);
-                newScale.y = Mathf.Lerp(newScale.y, 0, lerpSpeed * Time.deltaTime);
+                newScale.x = Mathf.Lerp(newScale.x, 0, lerpSpeed);
+                newScale.y = Mathf.Lerp(newScale.y, 0, lerpSpeed);
                 transform.localScale = newScale;
 
-                newPosition.x = Mathf.Lerp(newPosition.x, voidPosition.x, lerpSpeed * Time.deltaTime);
-                newPosition.y = Mathf.Lerp(newPosition.y, voidPosition.y, lerpSpeed * Time.deltaTime);
+                newPosition.x = Mathf.Lerp(newPosition.x, voidPosition.x, lerpSpeed);
+                newPosition.y = Mathf.Lerp(newPosition.y, voidPosition.y, lerpSpeed);
                 transform.position = newPosition;
 
                 yield return new WaitForSeconds(0.03f);
@@ -94,8 +94,8 @@ public class BlockHandler : MonoBehaviour
     {
         for (int i = 0; i <= 20; i++)
         {
-            newScale.x = Mathf.Lerp(newScale.x, 1, lerpSpeed * Time.deltaTime);
-            newScale.y = Mathf.Lerp(newScale.y, 1, lerpSpeed * Time.deltaTime);
+            newScale.x = Mathf.Lerp(newScale.x, 1, lerpSpeed);
+            newScale.y = Mathf.Lerp(newScale.y, 1, lerpSpeed);
             transform.localScale = newScale;
             yield return new WaitForSeconds(0.01f);
         }
