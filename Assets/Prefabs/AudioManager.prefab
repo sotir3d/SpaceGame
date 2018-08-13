@@ -54,7 +54,7 @@ MonoBehaviour:
   sounds:
   - name: GameMusic
     clip: {fileID: 8300000, guid: 3379e54641998c7419d411f93fafaf52, type: 3}
-    volume: 0.02
+    volume: 0.15
     pitch: 1
     loop: 1
     spatialBlend: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: FootstepSound
     clip: {fileID: 8300000, guid: 064d375fbb78311418f2e13faf909b08, type: 3}
-    volume: 0.1
+    volume: 0.6
     pitch: 1
     loop: 0
     spatialBlend: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BlockPop
     clip: {fileID: 8300000, guid: 0f5ab8f78a162ee4aa8f721a1d5f234d, type: 3}
-    volume: 0.1
+    volume: 0.15
     pitch: 1
     loop: 0
     spatialBlend: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: succ
     clip: {fileID: 8300000, guid: bfd4a6af690248641a48fda6db597c3e, type: 3}
-    volume: 0.02
+    volume: 0.1
     pitch: 1
     loop: 0
     spatialBlend: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: PlayerDead
     clip: {fileID: 8300000, guid: 4814848b28dd87042a6637b44bf983a3, type: 3}
-    volume: 0.1
+    volume: 0.5
     pitch: 1
     loop: 0
     spatialBlend: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: GameOver
     clip: {fileID: 8300000, guid: edccad4be067cb7418bb378f57419ab1, type: 3}
-    volume: 0.1
+    volume: 0.5
     pitch: 1
     loop: 0
     spatialBlend: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: VoidSpawn
     clip: {fileID: 8300000, guid: f0d68ab48ca2f8d48b28624fb6443fd5, type: 3}
-    volume: 0.1
+    volume: 0.5
     pitch: 1
     loop: 0
     spatialBlend: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MainMenuMusic
     clip: {fileID: 8300000, guid: e3e8863d6eeab8142b9dd4116aa405e4, type: 3}
-    volume: 0.02
+    volume: 0.15
     pitch: 1
     loop: 1
     spatialBlend: 0
