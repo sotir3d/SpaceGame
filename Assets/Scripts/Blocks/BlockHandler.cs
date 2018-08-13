@@ -42,7 +42,6 @@ public class BlockHandler : MonoBehaviour
         //Avoids spawning blocks too near to the player, spawns a new block at a new location if it happens
         if (collision.CompareTag("PlayerCircle") && (Time.time - spawnTime) < 0.02f && !isDestroyed)
         {
-            //Debug.Log("destroyed");
             isDestroyed = true;
             blockSpawner.GetComponent<BlockSpawner>().SpawnBlock();
             Destroy(gameObject);

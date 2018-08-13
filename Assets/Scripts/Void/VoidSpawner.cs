@@ -6,7 +6,7 @@ public class VoidSpawner : MonoBehaviour
 {
     public GameObject voidFloor;
     public int voidAmount = 15;
-
+    
     Vector2 voidPos;
     IList<GameObject> numberOfVoid;
 
@@ -27,12 +27,15 @@ public class VoidSpawner : MonoBehaviour
             
     }
 
-    void Spawn()
+    public void Spawn()
     {
         if (numberOfVoid.Count <= voidAmount)
         {
             FindObjectOfType<AudioManager>().Play("VoidSpawn");
             GameObject voidFloorClone = Instantiate(voidFloor, voidPos, Quaternion.identity);
+
+            voidFloorClone.GetComponent<VoidHandler>().voidSpawner = gameObject;
+
             numberOfVoid.Add(voidFloorClone);
         }       
     }

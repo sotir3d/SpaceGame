@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class VoidHandler : MonoBehaviour
 {
+    public GameObject voidSpawner;
+
     PlayerManager playerManager;
     Vector2 newScale;
     float lerpSpeed = 20;
+
+    bool isDestroyed = false;
 
     void Start()
     {
@@ -35,8 +39,11 @@ public class VoidHandler : MonoBehaviour
             StartCoroutine(other.GetComponent<BlockHandler>().Death(transform.position));
         }
 
-        if (other.CompareTag("SpawnPoint"))
+        if (other.CompareTag("SpawnPoint") && !isDestroyed)
         {
+            Debug.Log("yo");
+            isDestroyed = true;
+            voidSpawner.GetComponent<VoidSpawner>().Spawn();
             Destroy(gameObject);
         }
     }
