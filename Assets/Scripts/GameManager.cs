@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int maxBlocks;
 
     int currentBlocks = 0;
+    int deliveredBlocks = 0;
 
     private void Start()
     {
@@ -28,6 +29,19 @@ public class GameManager : MonoBehaviour
         set
         {
             currentBlocks = value;
+        }
+    }
+
+    public int DeliveredBlocks
+    {
+        get
+        {
+            return deliveredBlocks;
+        }
+
+        set
+        {
+            deliveredBlocks = value;
         }
     }
 
@@ -50,6 +64,12 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
+        if (!PlayerPrefs.HasKey("HighScore"))
+            PlayerPrefs.SetInt("HighScore", DeliveredBlocks);
+
+        else if (DeliveredBlocks > PlayerPrefs.GetInt("HighScore"))
+            PlayerPrefs.SetInt("HighScore", DeliveredBlocks);
+
         uiManager.ToggleGameOver();
         Time.timeScale = 0;
     }

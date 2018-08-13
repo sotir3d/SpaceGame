@@ -17,14 +17,13 @@ public class BlockHandler : MonoBehaviour
 
     bool isDying = false;
 
-    GameManager gM;
+    GameManager gameManager;
 
     void Start()
     {
-        gM = FindObjectOfType<GameManager>();
+        gameManager = FindObjectOfType<GameManager>();
 
-
-        gM.AddBlock();
+        gameManager.CurrentBlocks++;
 
         newScale.x = 0;
         newScale.y = 0;
@@ -47,6 +46,7 @@ public class BlockHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Avoids spawning blocks too near to the player, spawns a new block at a new location if it happens
         if (collision.CompareTag("PlayerCircle") && (Time.time - spawnTime) < 0.02f && !isDestroyed)
         {
             //Debug.Log("destroyed");
@@ -67,9 +67,10 @@ public class BlockHandler : MonoBehaviour
         if (!isDying)
         {
             Vector2 newPosition;
-
-            gM.RemoveBlock();
-
+            
+            gameManager.CurrentBlocks--;
+            gameManager.DeliveredBlocks++;
+            
             isDying = true;
 
             newPosition = transform.position;

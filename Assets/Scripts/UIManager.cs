@@ -11,7 +11,10 @@ public class UIManager : MonoBehaviour
     public Canvas uiCanvas;
     public Canvas gameOverCanvas;
 
-    public TextMeshProUGUI blockText;
+    public TextMeshProUGUI currentBlocksText;
+    public TextMeshProUGUI deliveredBlocksText;
+    public TextMeshProUGUI currentScore;
+    public TextMeshProUGUI highScore;
     
     // Use this for initialization
     void Start()
@@ -23,12 +26,16 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        blockText.text = "Current Boxes: " + gameManager.CurrentBlocks + " / " + gameManager.maxBlocks;
+        currentBlocksText.text = "Current Boxes: " + gameManager.CurrentBlocks + " / " + gameManager.maxBlocks;
+        deliveredBlocksText.text = "Delivered Boxes: " + gameManager.DeliveredBlocks;
     }
 
     public void ToggleGameOver()
     {
         uiCanvas.enabled = false;
         gameOverCanvas.enabled = true;
+        
+        currentScore.text = "Score: " + gameManager.DeliveredBlocks;
+        highScore.text = "High Score: " + PlayerPrefs.GetInt("HighScore");
     }
 }
