@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public UIManager uiManager;
+    public AudioManager audioManager;
 
     public int maxBlocks;
 
@@ -69,6 +70,8 @@ public class GameManager : MonoBehaviour
 
         else if (DeliveredBlocks > PlayerPrefs.GetInt("HighScore"))
             PlayerPrefs.SetInt("HighScore", DeliveredBlocks);
+
+        //audioManager.Stop("GameMusic");
 
         if(uiManager != null)
             uiManager.ToggleGameOver();

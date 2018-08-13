@@ -39,20 +39,17 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        //if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 1)
-        //{
-        //    Stop("Theme2");
-        //    Stop("ThemeGameOverScreen");
-        //    Stop("ThemeThankYou");
-        //    if (!playOnce)
-        //    {
-        //        if (!IsPlaying("Theme1"))
-        //        {
-        //            Play("Theme1");
-        //            playOnce = true;
-        //        }
-        //    }
-        //}
+        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            if (!playOnce)
+            {
+                if (!IsPlaying("GameMusic"))
+                {
+                    Play("GameMusic");
+                    playOnce = true;
+                }
+            }
+        }
 
         //if (SceneManager.GetActiveScene().buildIndex == 2)
         //{
