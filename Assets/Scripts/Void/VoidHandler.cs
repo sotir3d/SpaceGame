@@ -6,7 +6,7 @@ public class VoidHandler : MonoBehaviour
 {
     PlayerManager playerManager;
     Vector2 newScale;
-    Vector2 newPosition;
+    float lerpSpeed = 20;
 
     void Start()
     {
@@ -34,5 +34,22 @@ public class VoidHandler : MonoBehaviour
         {
             StartCoroutine(other.GetComponent<BlockHandler>().Death(transform.position));
         }
+
+        if (other.CompareTag("SpawnPoint"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public IEnumerator Disappear()
+    {
+        for (int i = 0; i <= 20; i++)
+        {
+            newScale.x = Mathf.Lerp(newScale.x, 0, lerpSpeed * Time.deltaTime);
+            newScale.y = Mathf.Lerp(newScale.y, 0, lerpSpeed * Time.deltaTime);
+            transform.localScale = newScale;
+            yield return new WaitForSeconds(0.03f);
+        }
+        Destroy(gameObject);
     }
 }

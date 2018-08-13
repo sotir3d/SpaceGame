@@ -8,28 +8,38 @@ public class VoidSpawner : MonoBehaviour
     public int voidAmount = 15;
 
     Vector2 voidPos;
-    int numberOfVoid;
+    IList<GameObject> numberOfVoid;
 
     void Start()
     {
+        numberOfVoid = new List<GameObject>();
         InvokeRepeating("Spawn", 3, 5);
-        if (numberOfVoid == voidAmount)
-            InvokeRepeating("Destroy", 5, 5);
     }
 
     void Update()
     {
         voidPos = new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-6f, 6f));
+        if (numberOfVoid.Count == voidAmount)
+        {
+            InvokeRepeating("Destroy", 5, 5);
+
+        }
+            
     }
 
     void Spawn()
     {
-        numberOfVoid = FindObjectsOfType<VoidHandler>().Length;
-        if (numberOfVoid <= voidAmount)
-            Instantiate(voidFloor, voidPos, Quaternion.identity);
+        if (numberOfVoid.Count <= voidAmount)
+        {
+            GameObject voidFloorClone = Instantiate(voidFloor, voidPos, Quaternion.identity);
+            numberOfVoid.Add(voidFloorClone);
+        }       
     }
-    private void Destroy()
+
+    void Destroy()
     {
-        Destroy(gameObject);
+        Debug.Log("enter!");
+        numberOfVoid[0].GetComponent<VoidHandler>().StartCoroutine("Disappear");
+        numberOfVoid.RemoveAt(0);
     }
 }
