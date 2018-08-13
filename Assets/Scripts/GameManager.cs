@@ -70,7 +70,8 @@ public class GameManager : MonoBehaviour
         else if (DeliveredBlocks > PlayerPrefs.GetInt("HighScore"))
             PlayerPrefs.SetInt("HighScore", DeliveredBlocks);
 
-        uiManager.ToggleGameOver();
+        if(uiManager != null)
+            uiManager.ToggleGameOver();
         Time.timeScale = 0;
     }
 
@@ -78,5 +79,10 @@ public class GameManager : MonoBehaviour
     {
         //Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
