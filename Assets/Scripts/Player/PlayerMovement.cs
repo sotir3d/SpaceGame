@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 6f;
+    public float turnSpeed = 200f;
 
     Rigidbody2D playerRigidbody;
 
@@ -19,11 +20,14 @@ public class PlayerMovement : MonoBehaviour
         if (Time.timeScale == 0)
             return;
 
-        playerRigidbody.velocity = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0) * moveSpeed;
-
         if (Input.GetAxis("Turn") != 0)
         {
-            transform.Rotate(Vector3.forward * Input.GetAxis("Turn"));
+            transform.Rotate(Vector3.forward * Input.GetAxis("Turn") * turnSpeed * Time.deltaTime);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        playerRigidbody.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * moveSpeed;
     }
 }
