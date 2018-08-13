@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static AudioManager instance;
+    [HideInInspector]
     public bool playOnce = false;
 
     void Awake()
@@ -39,7 +40,12 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Stop("GameMusic");
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             if (!playOnce)
             {
@@ -116,5 +122,15 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + "not found!");
         }
         return s.source.isPlaying;
+    }
+
+    public void PitchShift(string name, float min, float max)
+    {
+        Sound s = Array.Find(sounds, Sound => Sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + "not found!");
+        }
+        s.source.pitch = UnityEngine.Random.Range(min, max);
     }
 }
