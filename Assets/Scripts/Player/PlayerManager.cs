@@ -17,6 +17,7 @@ public class PlayerManager : MonoBehaviour
 
     public IEnumerator DeathFeedback()
     {
+        FindObjectOfType<AudioManager>().Play("PlayerDead");
         int rng = Random.Range(0, numberOfSpawnpoints);
         gameObject.SetActive(false);
         transform.position = spawnPoints[rng].transform.position;

@@ -20,7 +20,6 @@ public class VoidSpawner : MonoBehaviour
     {
         voidPos = new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-6f, 6f));
 
-
         if (numberOfVoid.Count > voidAmount)
         {
             Destroy();
@@ -32,6 +31,7 @@ public class VoidSpawner : MonoBehaviour
     {
         if (numberOfVoid.Count <= voidAmount)
         {
+            FindObjectOfType<AudioManager>().Play("VoidSpawn");
             GameObject voidFloorClone = Instantiate(voidFloor, voidPos, Quaternion.identity);
             numberOfVoid.Add(voidFloorClone);
         }       

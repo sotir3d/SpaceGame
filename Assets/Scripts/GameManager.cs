@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public int maxBlocks;
 
+    bool playOnce = false;
     int currentBlocks = 0;
     int deliveredBlocks = 0;
 
@@ -71,7 +72,12 @@ public class GameManager : MonoBehaviour
         else if (DeliveredBlocks > PlayerPrefs.GetInt("HighScore"))
             PlayerPrefs.SetInt("HighScore", DeliveredBlocks);
 
-        //audioManager.Stop("GameMusic");
+        audioManager.Stop("GameMusic");
+        if(!playOnce)
+        {
+            audioManager.Play("GameOver");
+            playOnce = true;
+        }
 
         if(uiManager != null)
             uiManager.ToggleGameOver();
@@ -87,5 +93,6 @@ public class GameManager : MonoBehaviour
     public void ToMainMenu()
     {
         SceneManager.LoadScene(0);
+        audioManager.playOnce = false;
     }
 }

@@ -43,7 +43,7 @@ public class VoidHandler : MonoBehaviour
 
     public IEnumerator Disappear()
     {
-        for (int i = 0; i <= 50; i++)
+        for (int i = 0; i <= 30; i++)
         {
             newScale.x = Mathf.Lerp(newScale.x, 0, lerpSpeed * Time.deltaTime);
             newScale.y = Mathf.Lerp(newScale.y, 0, lerpSpeed * Time.deltaTime);

@@ -37,13 +37,6 @@ public class BlockHandler : MonoBehaviour
         StartCoroutine(InitialSizeLerp());
     }
 
-    void Update()
-    {
-        //newScale.x = Mathf.Lerp(newScale.x, 1, 5f * Time.deltaTime);
-        //newScale.y = Mathf.Lerp(newScale.y, 1, 5f * Time.deltaTime);
-        //transform.localScale = newScale;
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Avoids spawning blocks too near to the player, spawns a new block at a new location if it happens

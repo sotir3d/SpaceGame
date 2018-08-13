@@ -217,6 +217,48 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87803df5a0ff3fd4bb7118940b4b936a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &324416553
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4399027909495572, guid: d5f00d6d1b9b20d45b7df5de93ae81bb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399027909495572, guid: d5f00d6d1b9b20d45b7df5de93ae81bb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399027909495572, guid: d5f00d6d1b9b20d45b7df5de93ae81bb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399027909495572, guid: d5f00d6d1b9b20d45b7df5de93ae81bb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399027909495572, guid: d5f00d6d1b9b20d45b7df5de93ae81bb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399027909495572, guid: d5f00d6d1b9b20d45b7df5de93ae81bb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399027909495572, guid: d5f00d6d1b9b20d45b7df5de93ae81bb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399027909495572, guid: d5f00d6d1b9b20d45b7df5de93ae81bb, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5f00d6d1b9b20d45b7df5de93ae81bb, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &374505032
 Prefab:
   m_ObjectHideFlags: 0
@@ -777,80 +819,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4963710043303946, guid: 80391fd90596578479a6e0dcbb8903f1,
     type: 2}
   m_PrefabInternal: {fileID: 878244169}
---- !u!1 &1628606755
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1628606757}
-  - component: {fileID: 1628606756}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1628606756
+--- !u!114 &1628606756 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1628606755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114006238420691522, guid: d5f00d6d1b9b20d45b7df5de93ae81bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 324416553}
   m_Script: {fileID: 11500000, guid: 6c73228000819c44db951e36dcd3cbe7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: GameMusic
-    clip: {fileID: 8300000, guid: 3379e54641998c7419d411f93fafaf52, type: 3}
-    volume: 0.02
-    pitch: 1
-    loop: 1
-    spatialBlend: 0
-    maxDistance: 0
-    source: {fileID: 0}
-  - name: FootstepSound
-    clip: {fileID: 8300000, guid: 064d375fbb78311418f2e13faf909b08, type: 3}
-    volume: 0.1
-    pitch: 1
-    loop: 0
-    spatialBlend: 0
-    maxDistance: 0
-    source: {fileID: 0}
-  - name: BlockPop
-    clip: {fileID: 8300000, guid: 0f5ab8f78a162ee4aa8f721a1d5f234d, type: 3}
-    volume: 0.1
-    pitch: 1
-    loop: 0
-    spatialBlend: 0
-    maxDistance: 0
-    source: {fileID: 0}
-  - name: succ
-    clip: {fileID: 8300000, guid: bfd4a6af690248641a48fda6db597c3e, type: 3}
-    volume: 0.1
-    pitch: 1
-    loop: 0
-    spatialBlend: 0
-    maxDistance: 0
-    source: {fileID: 0}
-  playOnce: 0
---- !u!4 &1628606757
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1628606755}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5178577, y: -0.11778685, z: 0.0859375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1745828816 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114120907085210506, guid: 5438fa105f45d9244b478d7ee943faeb,

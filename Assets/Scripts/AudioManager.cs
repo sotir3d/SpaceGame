@@ -43,10 +43,19 @@ public class AudioManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             Stop("GameMusic");
+            if (!playOnce)
+            {
+                if (!IsPlaying("MainMenuMusic"))
+                {
+                    Play("MainMenuMusic");
+                    playOnce = true;
+                }
+            }
         }
 
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
+            Stop("MainMenuMusic");
             if (!playOnce)
             {
                 if (!IsPlaying("GameMusic"))

@@ -27,20 +27,13 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Rotate(Vector3.forward * Input.GetAxis("Turn") * turnSpeed * Time.deltaTime);
         }
-    }
 
-    private void FixedUpdate()
-    {
-        playerRigidbody.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * moveSpeed;
-
-        if (Input.GetAxis("Horizontal") !=0 || Input.GetAxis("Vertical") !=0)
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             if ((Time.time - lastFootstepSound) > footstepSoundSpeed)
             {
                 FindObjectOfType<AudioManager>().Play("FootstepSound");
-                
-                    FindObjectOfType<AudioManager>().PitchShift("FootstepSound", 0.8f, 1);
-                
+                FindObjectOfType<AudioManager>().PitchShift("FootstepSound", 0.8f, 1);
                 lastFootstepSound = Time.time;
             }
         }
@@ -48,5 +41,10 @@ public class PlayerMovement : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Stop("FootstepSound");
         }
+    }
+
+    private void FixedUpdate()
+    {
+        playerRigidbody.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * moveSpeed;
     }
 }

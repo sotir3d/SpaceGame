@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1251238732132516}
+  m_IsPrefabAsset: 1
+--- !u!1 &1251238732132516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4399027909495572}
+  - component: {fileID: 114006238420691522}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4399027909495572
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1251238732132516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114006238420691522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1251238732132516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c73228000819c44db951e36dcd3cbe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: GameMusic
+    clip: {fileID: 8300000, guid: 3379e54641998c7419d411f93fafaf52, type: 3}
+    volume: 0.02
+    pitch: 1
+    loop: 1
+    spatialBlend: 0
+    maxDistance: 0
+    source: {fileID: 0}
+  - name: FootstepSound
+    clip: {fileID: 8300000, guid: 064d375fbb78311418f2e13faf909b08, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    source: {fileID: 0}
+  - name: BlockPop
+    clip: {fileID: 8300000, guid: 0f5ab8f78a162ee4aa8f721a1d5f234d, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    source: {fileID: 0}
+  - name: succ
+    clip: {fileID: 8300000, guid: bfd4a6af690248641a48fda6db597c3e, type: 3}
+    volume: 0.02
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    source: {fileID: 0}
+  - name: PlayerDead
+    clip: {fileID: 8300000, guid: 4814848b28dd87042a6637b44bf983a3, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: edccad4be067cb7418bb378f57419ab1, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    source: {fileID: 0}
+  - name: VoidSpawn
+    clip: {fileID: 8300000, guid: f0d68ab48ca2f8d48b28624fb6443fd5, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    maxDistance: 0
+    source: {fileID: 0}
+  - name: MainMenuMusic
+    clip: {fileID: 8300000, guid: e3e8863d6eeab8142b9dd4116aa405e4, type: 3}
+    volume: 0.02
+    pitch: 1
+    loop: 1
+    spatialBlend: 0
+    maxDistance: 0
+    source: {fileID: 0}
+  playOnce: 0
