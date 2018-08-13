@@ -52,4 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   voidFloor: {fileID: 1347075562468052, guid: 71dea7bc5bc2d204c9114a11585a719e, type: 2}
-  voidAmount: 10
+  voidAmount: 6
+  spawnRate: 5
