@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float turnSpeed = 200f;
     public float footstepSoundSpeed;
 
-    bool playOnce = false;
     float lastFootstepSound;
     Rigidbody2D playerRigidbody;
 

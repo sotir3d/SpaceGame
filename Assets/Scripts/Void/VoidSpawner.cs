@@ -39,7 +39,6 @@ public class VoidSpawner : MonoBehaviour
 
     void Destroy()
     {
-        Debug.Log("enter!");
         numberOfVoid[0].GetComponent<VoidHandler>().StartCoroutine("Disappear");
         numberOfVoid.RemoveAt(0);
     }

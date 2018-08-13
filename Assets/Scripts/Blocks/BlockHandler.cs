@@ -62,15 +62,17 @@ public class BlockHandler : MonoBehaviour
     }
 
     public IEnumerator Death(Vector2 voidPosition)
-    {        
+    {
         //avoids calling Death multiple times because of OnTriggerEnter2D weirdness
         if (!isDying)
         {
             Vector2 newPosition;
-            
+
+            FindObjectOfType<AudioManager>().Play("succ");
+
             gameManager.CurrentBlocks--;
             gameManager.DeliveredBlocks++;
-            
+
             isDying = true;
 
             newPosition = transform.position;
@@ -87,12 +89,12 @@ public class BlockHandler : MonoBehaviour
                 newPosition.y = Mathf.Lerp(newPosition.y, voidPosition.y, lerpSpeed * Time.deltaTime);
                 transform.position = newPosition;
 
-
                 yield return new WaitForSeconds(0.03f);
             }
 
             Destroy(gameObject);
         }
+
     }
 
     IEnumerator InitialSizeLerp()
