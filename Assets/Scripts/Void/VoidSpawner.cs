@@ -6,6 +6,7 @@ public class VoidSpawner : MonoBehaviour
 {
     public GameObject voidFloor;
     public int voidAmount = 15;
+    public int spawnRate = 5;
     
     Vector2 voidPos;
     IList<GameObject> numberOfVoid;
@@ -13,7 +14,7 @@ public class VoidSpawner : MonoBehaviour
     void Start()
     {
         numberOfVoid = new List<GameObject>();
-        InvokeRepeating("Spawn", 3, 5);
+        InvokeRepeating("Spawn", 1, spawnRate);
     }
 
     void Update()

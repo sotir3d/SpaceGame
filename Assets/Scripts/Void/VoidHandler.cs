@@ -41,7 +41,7 @@ public class VoidHandler : MonoBehaviour
 
         if (other.CompareTag("SpawnPoint") && !isDestroyed)
         {
-            Debug.Log(other.name);
+            //Debug.Log(other.name);
             isDestroyed = true;
             voidSpawner.GetComponent<VoidSpawner>().Spawn();
             voidSpawner.GetComponent<VoidSpawner>().DestroyOnWrongLocation(gameObject);

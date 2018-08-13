@@ -14,7 +14,7 @@ public class BlockSpawner : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("SpawnBlock", spawnRate, spawnRate);
+        InvokeRepeating("SpawnBlock", 0, spawnRate);
     }
 
     public void SpawnBlock()
