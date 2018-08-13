@@ -19,10 +19,11 @@ public class VoidSpawner : MonoBehaviour
     void Update()
     {
         voidPos = new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-6f, 6f));
-        if (numberOfVoid.Count == voidAmount)
-        {
-            InvokeRepeating("Destroy", 5, 5);
 
+
+        if (numberOfVoid.Count > voidAmount)
+        {
+            Destroy();
         }
             
     }
