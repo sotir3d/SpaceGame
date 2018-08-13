@@ -56,6 +56,7 @@ public class VoidHandler : MonoBehaviour
             transform.localScale = newScale;
             yield return new WaitForSeconds(0.03f);
         }
+        FindObjectOfType<AudioManager>().Play("VoidDespawn");
         Destroy(gameObject);
     }
 }
