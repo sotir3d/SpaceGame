@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         CurrentBlocks = 0;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     public int CurrentBlocks
@@ -72,9 +73,9 @@ public class GameManager : MonoBehaviour
         else if (DeliveredBlocks > PlayerPrefs.GetInt("HighScore"))
             PlayerPrefs.SetInt("HighScore", DeliveredBlocks);
 
-        audioManager.Stop("GameMusic");
         if(!playOnce)
         {
+            audioManager.Stop("GameMusic");
             audioManager.Play("GameOver");
             playOnce = true;
         }

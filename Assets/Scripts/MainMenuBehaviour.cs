@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuBehaviour : MonoBehaviour
 {
-    AudioManager audioManager;
+    public AudioManager audioManager;
 
     public void StartGame()
     {
